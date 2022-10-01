@@ -1,0 +1,36 @@
+ALGORITHM DELETE_BLANKS
+VAR str : STRING[] := "Gomytech est le blog de GOMYCODE.";
+    i : INTEGER:=0;
+    nb_words : INTEGER:=0;
+    nb_vowels : INTEGER := 0;
+BEGIN
+    FOR i from 0 to str.length-1 DO
+        IF (str[i]=" ") THEN
+            nb_words := nb_words+1;
+        END_IF
+        IF ( upcase(str[i]="E") OR upcase(str[i]="A") OR upcase(str[i]="I") OR upcase(str[i]="O") OR upcase(str[i]="U")) THEN
+            nb_vowels:= nb_vowels+1;
+        END_IF
+    END_FOR
+    
+END
+
+ALGORITHM SETS_SUM
+VAR 
+    SET1 : ARRAY_OF INTEGER[2,5,4,7,9,6,3];
+    SET2 : ARRAY_OF INTEGER[6,8,7,5,1,0];
+    sum = 0 : INTEGER:=0;
+    i : INTEGER;
+    j : INTEGER:=0;
+
+BEGIN 
+    FOR i from 0 to SET1.length DO
+        REPEAT
+            if (SET1[i]=set2[i]) THEN
+                sum:=sum+SET1[i];
+            END_IF
+            j:=j+1;
+        UNTIL (j=SET2.length)
+        Write("la somme est:", j)
+    END_FOR
+END
